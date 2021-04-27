@@ -1,0 +1,60 @@
+<!-- <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)"> -->
+<div class="header">
+    <h2>Todo App</h2>
+    <input type="text" placeholder="add a todo" class="input-todo" [(ngModel)]="name">
+    <br><br>
+    <a class="btn btn-sm btn-success" (click)="Add()"><i class="fa fa-plus"></i>&nbsp;{{addButton}} </a>
+    <!-- <button (click)="Add()">{{addButton}}</button> -->
+</div>
+<div class="row">
+    <table class="table table-hover">
+        <thead class="thead-light">
+            <!-- <th>Status</th> -->
+            <th>Task Name</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let todo of todos; let i = index">
+                <!-- <td>
+                    <input type="checkbox" [value]="true" (change)="onCheckboxChange(todo.name)" />
+                </td> -->
+                <td>{{todo.name}}</td>
+                <td>
+                    <a class="btn btn-sm btn-success" (click)="EditTask(todo.name,i)"><i class="fa fa-pencil"></i>&nbsp; Edit</a>
+                    <a class="btn btn-sm btn-danger ml-1" (click)="DeleteTask(i)"><i class="fa fa-trash"></i>&nbsp; Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<hr>
+<h2>List from Data Base</h2>
+<div class="row">
+    <table class="table table-hover">
+        <thead class="thead-light">
+            <th>Is complete</th>
+            <th>Task Name</th>
+            <th>Status</th>
+            <th>Id</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let todo of todoDbList; let i = index">
+                <td>
+                    <input type="checkbox" [value]="true" (change)="onCheckboxChange(todo.id)" />
+                </td>
+                <td>{{todo.name}}</td>
+                <td>{{todo.status}}</td>
+                <td>{{todo.id}}</td>
+                <td>
+                    <a class="btn btn-sm btn-danger ml-1" (click)="DeleteFromDb(todo.id)"><i class="fa fa-trash"></i>&nbsp; Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!-- </form> -->

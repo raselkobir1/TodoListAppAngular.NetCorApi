@@ -1,0 +1,17 @@
+.header{
+    background-color:chocolate;
+    text-align: center;
+}
+.input-todo{
+    width: 250px;
+    height: 40px;
+    border-radius: 7px;
+    background-color:burlywood;
+    font-style:oblique;
+}
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    display: inline-table;
+}
